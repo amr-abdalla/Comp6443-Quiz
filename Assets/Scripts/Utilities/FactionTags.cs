@@ -7,6 +7,7 @@ public static class FactionTags
 	public const string _Scissor = "Scissor";
 	public const string _Lizard = "Lizard";
 	public const string _Spock = "Spock";
+	public const string _Saw = "Saw";
 
 	private static readonly Dictionary<string, HashSet<string>> Beats = new()
 	{

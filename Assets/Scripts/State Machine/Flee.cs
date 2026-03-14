@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Flee : State<IndividualAI>
 {
@@ -8,22 +7,28 @@ public class Flee : State<IndividualAI>
 
 	public Flee(IndividualAI owner, StateMachine<IndividualAI> stateMachine) : base(owner, stateMachine) { }
 
-    public override void Update()
-    {
-        if (enemy == null)
-        {
-            owner.ChooseNewState();
-            return;
-        }
+	public override void Update()
+	{
+		if (enemy == null)
+		{
+			owner.ChooseNewState();
+			return;
+		}
 
-        Vector3 fleeDir = (owner.transform.position - enemy.transform.position).normalized;
-        owner.MoveToDirection(fleeDir);
+		float dist = (owner.transform.position - enemy.transform.position).sqrMagnitude;
 
-        float dist = (owner.transform.position - enemy.transform.position).sqrMagnitude;
+		if (dist > 5f * 5f)
+		{
+			owner.TryStartBoost();
+		}
 
-        if (dist > 2.5f * 2.5f)
-        {
-            owner.ChooseNewState();
-        }
-    }
+		Vector3 fleeDir = (owner.transform.position - enemy.transform.position).normalized;
+		owner.MoveToDirection(fleeDir);
+
+
+		if (dist > 7.5f * 7.5f)
+		{
+			owner.ChooseNewState();
+		}
+	}
 }

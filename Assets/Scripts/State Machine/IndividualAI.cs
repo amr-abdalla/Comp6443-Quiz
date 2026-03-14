@@ -9,12 +9,41 @@ public class IndividualAI : MonoBehaviour
 	public Flee flee { get; private set; }
 	public Seek seek { get; private set; }
 
-	[HideInInspector] public float speed = 5f;
-	public float collisionAvoidanceRayDistance = 3f;
-	public LayerMask characterLayerMask;
-	public LayerMask obstacleLayerMask;
-	public float detectionRadius = 5f;
+	[HideInInspector] public float maxSpeed = 5f;
+	[SerializeField] private float collisionAvoidanceRayDistance = 3f;
+	[SerializeField] private LayerMask characterLayerMask;
+	[SerializeField] private LayerMask obstacleLayerMask;
+	[SerializeField] private float detectionRadius = 5f;
 	public Action<IndividualAI> OnDeath;
+
+	[SerializeField] private float boostSpeed = 3f;
+	[SerializeField] private float boostduration = 3f;
+	[SerializeField] private float boostCooldown = 3f;
+
+	private float lastBoostTime = 0f;
+
+	public bool CanBoost() => Time.time >= lastBoostTime + boostduration + boostCooldown;
+	public bool IsBoosting() => Time.time < lastBoostTime + boostduration;
+
+	public void TryStartBoost()
+	{
+		if (!CanBoost())
+		{
+			return;
+		}
+
+		lastBoostTime = Time.time;
+	}
+
+	private float GetMaxSpeed()
+	{
+		if (IsBoosting())
+		{
+			return maxSpeed + boostSpeed;
+		}
+
+		return maxSpeed;
+	}
 
 	void Awake()
 	{
@@ -44,7 +73,7 @@ public class IndividualAI : MonoBehaviour
 	public void MoveToDirection(Vector3 direction)
 	{
 		Vector3 finalDirection = GetAdjustedDirectionForObstacles(direction);
-		transform.position += finalDirection * speed * Time.deltaTime;
+		transform.position += finalDirection * GetMaxSpeed() * Time.deltaTime;
 	}
 
 	public Vector3 GetAdjustedDirectionForObstacles(Vector3 direction)

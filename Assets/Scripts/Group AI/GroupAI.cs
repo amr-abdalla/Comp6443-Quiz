@@ -44,7 +44,7 @@ public class GroupAI : MonoBehaviour
 
 		foreach (IndividualAI member in members)
 		{
-			member.speed = currentSpeed;
+			member.maxSpeed = currentSpeed;
 		}
 
 	}

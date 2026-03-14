@@ -9,6 +9,7 @@ TagManager:
   - Scissor
   - Spock
   - Lizard
+  - Saw
   layers:
   - Default
   - TransparentFX
