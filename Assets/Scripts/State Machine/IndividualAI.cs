@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEngine;
 
 public class IndividualAI : MonoBehaviour
@@ -7,11 +9,12 @@ public class IndividualAI : MonoBehaviour
 	public Flee flee { get; private set; }
 	public Seek seek { get; private set; }
 
-	public float speed = 5f;
+	[HideInInspector] public float speed = 5f;
 	public float collisionAvoidanceRayDistance = 3f;
 	public LayerMask characterLayerMask;
 	public LayerMask obstacleLayerMask;
 	public float detectionRadius = 5f;
+	public Action<IndividualAI> OnDeath;
 
 	void Awake()
 	{
@@ -79,42 +82,13 @@ public class IndividualAI : MonoBehaviour
 	{
 		Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, characterLayerMask);
 
-		Transform nearestEnemy = null;
-		float nearestEnemyDist = float.MaxValue;
-
-		Transform nearestTarget = null;
-		float nearestTargetDist = float.MaxValue;
-
 		string myTag = gameObject.tag;
 
-		foreach (var hit in hits)
-		{
-			if (hit.gameObject == gameObject)
-				continue;
-
-			string otherTag = hit.tag;
-			float dist = Vector3.Distance(transform.position, hit.transform.position);
-
-			// Enemy = something that beats us
-			if (otherTag.BeatsFaction(myTag))
-			{
-				if (dist < nearestEnemyDist)
-				{
-					nearestEnemyDist = dist;
-					nearestEnemy = hit.transform;
-				}
-			}
-
-			// Target = something we beat
-			if (myTag.BeatsFaction(otherTag))
-			{
-				if (dist < nearestTargetDist)
-				{
-					nearestTargetDist = dist;
-					nearestTarget = hit.transform;
-				}
-			}
-		}
+		Transform nearestEnemy = hits
+		.Where(h => h.gameObject != gameObject && h.tag.BeatsFaction(myTag))
+		.OrderBy(h => (h.transform.position - transform.position).sqrMagnitude)
+		.Select(h => h.transform)
+		.FirstOrDefault();
 
 		if (nearestEnemy != null)
 		{
@@ -123,11 +97,22 @@ public class IndividualAI : MonoBehaviour
 			return;
 		}
 
-		if (nearestTarget != null)
-		{
-			seek.target = nearestTarget;
-			stateMachine.ChangeState(seek);
-		}
+
+		IndividualAI[] possibleTargets = GameManager.Instance.GetPossibleTargets(myTag);
+
+		Transform nearestTarget = possibleTargets
+		.Where(t => t != this)
+		.OrderBy(t => (t.transform.position - transform.position).sqrMagnitude)
+		.Select(t => t.transform)
+		.FirstOrDefault();
+
+		seek.target = nearestTarget;
+		stateMachine.ChangeState(seek);
+	}
+
+	private void OnDestroy()
+	{
+		OnDeath?.Invoke(this);
 	}
 
 	private void OnDrawGizmos()
