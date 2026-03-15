@@ -20,7 +20,7 @@ public class Flee : State<IndividualAI>
 
 		float distanceToEnemy = enemyDir.sqrMagnitude;
 
-		if (distanceToEnemy > 5f * 5f)
+		if (distanceToEnemy <= 5f * 5f)
 		{
 			owner.TryStartBoost();
 		}

@@ -28,6 +28,11 @@ public class GroupAI : MonoBehaviour
 		}
 	}
 
+	private void Update()
+	{
+		UpdateFactionSpeed();
+	}
+
 	private void OnMemberDeath(IndividualAI member)
 	{
 		members.Remove(member);
@@ -37,8 +42,6 @@ public class GroupAI : MonoBehaviour
 			// Completely Died
 			return;
 		}
-
-		UpdateFactionSpeed();
 	}
 
 	public void UpdateFactionSpeed()
