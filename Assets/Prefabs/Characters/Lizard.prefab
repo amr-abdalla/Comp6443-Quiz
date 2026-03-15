@@ -369,6 +369,9 @@ MonoBehaviour:
   obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  JumpLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
   detectionRadius: 5
   boostSpeed: 3
   boostduration: 3

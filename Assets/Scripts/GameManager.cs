@@ -5,6 +5,7 @@ public class GameManager : Singleton<GameManager>
 {
 	private GroupAI[] groups;
 	[SerializeField] private CharactersSpawner sawSpawner;
+	[SerializeField] private CharactersSpawner jumpSpawner;
 
 	private void OnEnable()
 	{
@@ -25,6 +26,7 @@ public class GameManager : Singleton<GameManager>
 		}
 
 		sawSpawner.StartSpawning(sawSpawner.transform);
+		jumpSpawner.StartSpawning(jumpSpawner.transform);
 
 	}
 

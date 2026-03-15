@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8318618
 Transform:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &197690482
 Transform:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &416420065
 Transform:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &831512581
 Transform:
   m_ObjectHideFlags: 0
@@ -803,13 +803,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharactersSpawner
   spawnRange: {x: 35, y: 35}
-  spawnCount: 1
+  spawnCount: 10
   prefabToSpawn: {fileID: 2608001918880765207, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
 --- !u!4 &974724895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7317437552164315796, guid: 14e3dd4c50eff0d4f91bf3c3139661f7, type: 3}
   m_PrefabInstance: {fileID: 5195694190918337790}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &982583476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982583477}
+  - component: {fileID: 982583478}
+  m_Layer: 0
+  m_Name: Jump Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982583477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982583476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1874137775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &982583478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982583476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dadb75e824cf7342b9f68df537d1415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharactersSpawner
+  spawnRange: {x: 35, y: 35}
+  spawnCount: 10
+  prefabToSpawn: {fileID: 3040349116849945703, guid: 392aeea8e01da2a40b52e61d5a7cc162, type: 3}
 --- !u!1 &1259983417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   sawSpawner: {fileID: 8318619}
+  jumpSpawner: {fileID: 982583478}
 --- !u!4 &1874137775
 Transform:
   m_ObjectHideFlags: 0
@@ -1024,6 +1072,7 @@ Transform:
   - {fileID: 197690482}
   - {fileID: 416420065}
   - {fileID: 8318618}
+  - {fileID: 982583477}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994961934
@@ -1043,7 +1092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1994961935
 Transform:
   m_ObjectHideFlags: 0

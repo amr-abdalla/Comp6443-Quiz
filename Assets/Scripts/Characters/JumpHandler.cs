@@ -17,11 +17,16 @@ public class JumpHandler : MonoBehaviour
 			launchVelocity.y += gravity * Time.deltaTime;
 			transform.position += launchVelocity * Time.deltaTime;
 		}
+
+		if (transform.position.y < groundY - 2f)
+		{
+			Destroy(gameObject);
+		}
 	}
 
-	public void Launch()
+	public void Launch(Vector3 force)
 	{
-		launchVelocity = transform.forward * 6f + Vector3.up * 12f;
+		launchVelocity = force;
 		IsGrounded = false;
 	}
 

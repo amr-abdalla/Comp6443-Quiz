@@ -5,6 +5,7 @@ using UnityEngine;
 public class IndividualAI : MonoBehaviour
 {
 	private StateMachine<IndividualAI> stateMachine;
+	private JumpHandler jumpHandler;
 
 	public Flee flee { get; private set; }
 	public Seek seek { get; private set; }
@@ -13,6 +14,7 @@ public class IndividualAI : MonoBehaviour
 	[SerializeField] private float collisionAvoidanceRayDistance = 3f;
 	[SerializeField] private LayerMask characterLayerMask;
 	[SerializeField] private LayerMask obstacleLayerMask;
+	[SerializeField] private LayerMask JumpLayerMask;
 	[SerializeField] private float detectionRadius = 5f;
 	public Action<IndividualAI> OnDeath;
 
@@ -66,11 +68,12 @@ public class IndividualAI : MonoBehaviour
 	void Awake()
 	{
 		stateMachine = new StateMachine<IndividualAI>();
+		jumpHandler = GetComponent<JumpHandler>();
 
 		flee = new Flee(this, stateMachine);
-		flee.obstacleMask = obstacleLayerMask;
 		seek = new Seek(this, stateMachine);
-		seek.obstacleMask = obstacleLayerMask;
+		flee.jumpMask = JumpLayerMask;
+		seek.jumpMask = JumpLayerMask;
 
 		lastBoostTime = Time.time - boostCooldown - boostduration;
 	}
@@ -91,8 +94,14 @@ public class IndividualAI : MonoBehaviour
 	}
 
 	private float turnSpeed = 10f;
-	public void MoveToDirection(Vector3 direction)
+
+	public bool TryMoveToDirection(Vector3 direction)
 	{
+		if (!jumpHandler.IsGrounded)
+		{
+			return false;
+		}
+
 		Vector3 finalDirection = GetAdjustedDirectionForObstacles(direction);
 
 		if (finalDirection.sqrMagnitude > 0.0001f)
@@ -106,12 +115,12 @@ public class IndividualAI : MonoBehaviour
 		}
 
 		transform.position += finalDirection * GetMaxSpeed() * Time.deltaTime;
+		return true;
 	}
 
 	public Vector3 GetAdjustedDirectionForObstacles(Vector3 direction)
 	{
 		Vector3 finalDir = direction;
-
 
 		Vector3 origin = transform.position + Vector3.up * 0.3f;
 		RaycastHit hit;

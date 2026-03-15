@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 314705904384217883}
   - component: {fileID: 4011582444638715443}
   - component: {fileID: 4310306241235240710}
+  - component: {fileID: 7363925642497378195}
   m_Layer: 6
   m_Name: Paper
   m_TagString: Paper
@@ -142,6 +143,9 @@ MonoBehaviour:
   obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  JumpLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
   detectionRadius: 5
   boostSpeed: 3
   boostduration: 3
@@ -181,6 +185,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7363925642497378195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2608001918880765207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af65e389ab8b37142954a1a5745b812b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumpHandler
+  gravity: -20
 --- !u!1 &3343894311770263423
 GameObject:
   m_ObjectHideFlags: 0
