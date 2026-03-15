@@ -35,6 +35,24 @@ public class IndividualAI : MonoBehaviour
 		lastBoostTime = Time.time;
 	}
 
+	public float GetBoostPercentage()
+	{
+		float timeSinceBoost = Time.time - lastBoostTime;
+
+		if (timeSinceBoost < boostduration)
+		{
+			return 1f - (timeSinceBoost / boostduration);
+		}
+
+		float cooldownTime = timeSinceBoost - boostduration;
+		if (cooldownTime < boostCooldown)
+		{
+			return cooldownTime / boostCooldown;
+		}
+
+		return 1f;
+	}
+
 	private float GetMaxSpeed()
 	{
 		if (IsBoosting())
@@ -147,5 +165,10 @@ public class IndividualAI : MonoBehaviour
 	private void OnDrawGizmos()
 	{
 		Gizmos.DrawWireSphere(transform.position, detectionRadius);
+	}
+
+	public State<IndividualAI> GetCurrentState()
+	{
+		return stateMachine.CurrentState;
 	}
 }
