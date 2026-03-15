@@ -90,9 +90,21 @@ public class IndividualAI : MonoBehaviour
 		stateMachine.Update();
 	}
 
+	private float turnSpeed = 10f;
 	public void MoveToDirection(Vector3 direction)
 	{
 		Vector3 finalDirection = GetAdjustedDirectionForObstacles(direction);
+
+		if (finalDirection.sqrMagnitude > 0.0001f)
+		{
+			Quaternion targetRot = Quaternion.LookRotation(finalDirection);
+			transform.rotation = Quaternion.Slerp(
+				transform.rotation,
+				targetRot,
+				turnSpeed * Time.deltaTime
+			);
+		}
+
 		transform.position += finalDirection * GetMaxSpeed() * Time.deltaTime;
 	}
 
