@@ -133,14 +133,14 @@ public class IndividualAI : MonoBehaviour
 
 		// Left ray
 		Vector3 left = Quaternion.Euler(0, -35, 0) * direction;
-		if (Physics.Raycast(origin, left, out hit, collisionAvoidanceRayDistance / 2f, obstacleLayerMask))
+		if (Physics.Raycast(origin, left, out hit, collisionAvoidanceRayDistance / 1.5f, obstacleLayerMask))
 		{
 			finalDir += hit.normal;
 		}
 
 		// Right ray
 		Vector3 right = Quaternion.Euler(0, 35, 0) * direction;
-		if (Physics.Raycast(origin, right, out hit, collisionAvoidanceRayDistance / 2f, obstacleLayerMask))
+		if (Physics.Raycast(origin, right, out hit, collisionAvoidanceRayDistance / 1.5f, obstacleLayerMask))
 		{
 			finalDir += hit.normal;
 		}
