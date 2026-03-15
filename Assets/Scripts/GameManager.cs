@@ -4,7 +4,7 @@ public class GameManager : Singleton<GameManager>
 {
 	private GroupAI[] groups;
 
-	private void Start()
+	private void OnEnable()
 	{
 		groups = GetComponentsInChildren<GroupAI>();
 	}
@@ -21,4 +21,13 @@ public class GameManager : Singleton<GameManager>
 			.SelectMany(group => group.members)
 			.ToArray();
 	}
+
+	public IndividualAI[] GetPossibleEnemies(string attackerTag)
+	{
+		return groups
+			.Where(group => FactionTags.BeatsFaction(group.factionTag, attackerTag))
+			.SelectMany(group => group.members)
+			.ToArray();
+	}
+
 }

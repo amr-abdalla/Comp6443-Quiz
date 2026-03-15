@@ -236,6 +236,9 @@ MonoBehaviour:
   calmSpeed: 2
   averageSpeed: 6
   aggressiveSpeed: 10
+  friendlyUnitsBounds: {x: 2, y: 7}
+  targetUnitsBounds: {x: 3, y: 8}
+  enemyUnitsBounds: {x: 1, y: 6}
 --- !u!1001 &252798317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7129370869785469076, guid: a66a0c84323b64a44a1419ce700cd824, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: a66a0c84323b64a44a1419ce700cd824, type: 3}
       propertyPath: m_Name
@@ -681,6 +684,9 @@ MonoBehaviour:
   calmSpeed: 2
   averageSpeed: 6
   aggressiveSpeed: 10
+  friendlyUnitsBounds: {x: 2, y: 7}
+  targetUnitsBounds: {x: 3, y: 8}
+  enemyUnitsBounds: {x: 1, y: 6}
 --- !u!1001 &448601468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -699,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3528899642139317392, guid: 526342710f7be5b4891638007b7e9c70, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 526342710f7be5b4891638007b7e9c70, type: 3}
       propertyPath: m_Name
@@ -963,7 +969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982666169725560360, guid: 2c0ca99c6f06f8f4e88cc27821481729, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6876525789881984767, guid: 2c0ca99c6f06f8f4e88cc27821481729, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1060,6 +1066,9 @@ MonoBehaviour:
   calmSpeed: 2
   averageSpeed: 6
   aggressiveSpeed: 10
+  friendlyUnitsBounds: {x: 2, y: 7}
+  targetUnitsBounds: {x: 3, y: 8}
+  enemyUnitsBounds: {x: 1, y: 6}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3528899642139317392, guid: 526342710f7be5b4891638007b7e9c70, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 526342710f7be5b4891638007b7e9c70, type: 3}
       propertyPath: m_Name
@@ -1233,6 +1242,9 @@ MonoBehaviour:
   calmSpeed: 2
   averageSpeed: 6
   aggressiveSpeed: 10
+  friendlyUnitsBounds: {x: 2, y: 7}
+  targetUnitsBounds: {x: 3, y: 8}
+  enemyUnitsBounds: {x: 1, y: 6}
 --- !u!4 &974724895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7317437552164315796, guid: 14e3dd4c50eff0d4f91bf3c3139661f7, type: 3}
@@ -1261,7 +1273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2919253784413188779, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
       propertyPath: m_Name
@@ -1335,7 +1347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7129370869785469076, guid: a66a0c84323b64a44a1419ce700cd824, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: a66a0c84323b64a44a1419ce700cd824, type: 3}
       propertyPath: m_Name
@@ -1404,7 +1416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2919253784413188779, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
       propertyPath: m_Name
@@ -1477,7 +1489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982666169725560360, guid: 2c0ca99c6f06f8f4e88cc27821481729, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6876525789881984767, guid: 2c0ca99c6f06f8f4e88cc27821481729, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1542,7 +1554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3528899642139317392, guid: 526342710f7be5b4891638007b7e9c70, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 526342710f7be5b4891638007b7e9c70, type: 3}
       propertyPath: m_Name
@@ -1714,7 +1726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7129370869785469076, guid: a66a0c84323b64a44a1419ce700cd824, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: a66a0c84323b64a44a1419ce700cd824, type: 3}
       propertyPath: m_Name
@@ -1849,7 +1861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982666169725560360, guid: 2c0ca99c6f06f8f4e88cc27821481729, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6876525789881984767, guid: 2c0ca99c6f06f8f4e88cc27821481729, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2033,7 +2045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2919253784413188779, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
       propertyPath: m_Name
@@ -2102,7 +2114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314705904384217883, guid: 90dac24bfe4028b4dbe24c291a437f5d, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 90dac24bfe4028b4dbe24c291a437f5d, type: 3}
       propertyPath: m_Name
@@ -2171,7 +2183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314705904384217883, guid: 90dac24bfe4028b4dbe24c291a437f5d, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 90dac24bfe4028b4dbe24c291a437f5d, type: 3}
       propertyPath: m_Name
@@ -2336,6 +2348,9 @@ MonoBehaviour:
   calmSpeed: 2
   averageSpeed: 6
   aggressiveSpeed: 10
+  friendlyUnitsBounds: {x: 2, y: 7}
+  targetUnitsBounds: {x: 3, y: 8}
+  enemyUnitsBounds: {x: 1, y: 6}
 --- !u!4 &2022247985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6876525789881984767, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
@@ -2364,7 +2379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314705904384217883, guid: 90dac24bfe4028b4dbe24c291a437f5d, type: 3}
       propertyPath: detectionRadius
-      value: 7.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2608001918880765207, guid: 90dac24bfe4028b4dbe24c291a437f5d, type: 3}
       propertyPath: m_Name
