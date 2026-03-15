@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: -2919253784413188779}
   - component: {fileID: 3499043034501127273}
   - component: {fileID: 5305270358830281201}
+  - component: {fileID: 6303332913517655406}
   m_Layer: 6
   m_Name: Lizard
   m_TagString: Lizard
@@ -257,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 2608001918880765207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -407,6 +408,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eab43ab5f0bfde41a00fb9f3620a4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterCollisionHandler
+--- !u!114 &6303332913517655406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2608001918880765207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af65e389ab8b37142954a1a5745b812b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumpHandler
+  gravity: -20
 --- !u!1 &6040316227679410185
 GameObject:
   m_ObjectHideFlags: 0

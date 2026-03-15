@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8318618
 Transform:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &197690482
 Transform:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &416420065
 Transform:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &831512581
 Transform:
   m_ObjectHideFlags: 0
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharactersSpawner
   spawnRange: {x: 35, y: 35}
-  spawnCount: 10
+  spawnCount: 1
   prefabToSpawn: {fileID: 2608001918880765207, guid: 5b5274956428dc24086272ce2bd6d9d1, type: 3}
 --- !u!4 &974724895 stripped
 Transform:
@@ -1043,7 +1043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1994961935
 Transform:
   m_ObjectHideFlags: 0
@@ -1160,6 +1160,10 @@ PrefabInstance:
     - target: {fileID: 6176636856789771752, guid: 14e3dd4c50eff0d4f91bf3c3139661f7, type: 3}
       propertyPath: m_Name
       value: Plane
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176636856789771752, guid: 14e3dd4c50eff0d4f91bf3c3139661f7, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7317437552164315796, guid: 14e3dd4c50eff0d4f91bf3c3139661f7, type: 3}
       propertyPath: m_LocalPosition.x

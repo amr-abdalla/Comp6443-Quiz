@@ -10,6 +10,7 @@ TagManager:
   - Spock
   - Lizard
   - Saw
+  - Ground
   layers:
   - Default
   - TransparentFX
