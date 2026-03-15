@@ -15,8 +15,10 @@ public class GroupAI : MonoBehaviour
 	public List<IndividualAI> members { get; private set; }
 	public string factionTag { get; private set; }
 
-	private void OnEnable()
+	public void SpawnAndInit()
 	{
+		CharactersSpawner spawner = GetComponent<CharactersSpawner>();
+		spawner.StartSpawning(transform);
 		members = GetComponentsInChildren<IndividualAI>().ToList();
 		factionTag = members[0].gameObject.tag;
 
@@ -24,11 +26,6 @@ public class GroupAI : MonoBehaviour
 		{
 			member.OnDeath += OnMemberDeath;
 		}
-	}
-
-	private void Start()
-	{
-		UpdateFactionSpeed();
 	}
 
 	private void OnMemberDeath(IndividualAI member)
@@ -44,7 +41,7 @@ public class GroupAI : MonoBehaviour
 		UpdateFactionSpeed();
 	}
 
-	private void UpdateFactionSpeed()
+	public void UpdateFactionSpeed()
 	{
 		currentSpeed = GetUpdatedSpeed();
 

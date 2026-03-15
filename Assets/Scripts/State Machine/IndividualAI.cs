@@ -20,7 +20,7 @@ public class IndividualAI : MonoBehaviour
 	[SerializeField] private float boostduration = 3f;
 	[SerializeField] private float boostCooldown = 3f;
 
-	private float lastBoostTime = 0f;
+	private float lastBoostTime;
 
 	public bool CanBoost() => Time.time >= lastBoostTime + boostduration + boostCooldown;
 	public bool IsBoosting() => Time.time < lastBoostTime + boostduration;
@@ -71,6 +71,8 @@ public class IndividualAI : MonoBehaviour
 		flee.obstacleMask = obstacleLayerMask;
 		seek = new Seek(this, stateMachine);
 		seek.obstacleMask = obstacleLayerMask;
+
+		lastBoostTime = Time.time - boostCooldown - boostduration;
 	}
 
 	void Start()
@@ -143,7 +145,6 @@ public class IndividualAI : MonoBehaviour
 			stateMachine.ChangeState(flee);
 			return;
 		}
-
 
 		IndividualAI[] possibleTargets = GameManager.Instance.GetPossibleTargets(myTag);
 
