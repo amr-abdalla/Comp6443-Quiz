@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerSpawningInfo : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMeshPro;
+    [SerializeField] private GameObject startButton;
 	private PlayerSpawner playerSpawner;
 
 	private void OnEnable()
@@ -15,6 +16,7 @@ public class PlayerSpawningInfo : MonoBehaviour
 	private void OnCompleteSpawn()
 	{
 		GameManager.Instance.initAll();
+		startButton.SetActive(true);
 		gameObject.SetActive(false);
 	}
 

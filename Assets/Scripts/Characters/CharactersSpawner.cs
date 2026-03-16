@@ -15,7 +15,7 @@ public class CharactersSpawner : MonoBehaviour
 			float x = Random.Range(-spawnRange.x, spawnRange.x);
 			float z = Random.Range(-spawnRange.y, spawnRange.y);
 
-			Vector3 spawnposition = transform.position + new Vector3(x, 1f, z);
+			Vector3 spawnposition = transform.position + new Vector3(x, prefabToSpawn.transform.position.y, z);
 
 			Instantiate(prefabToSpawn, spawnposition, Quaternion.identity, parent);
 		}

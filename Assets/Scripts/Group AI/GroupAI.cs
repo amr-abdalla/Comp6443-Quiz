@@ -60,7 +60,7 @@ public class GroupAI : MonoBehaviour
 
 		if (members.Count == 0)
 		{
-			// Completely Died
+			GameEnd.Instance.ToggleEndGame(tag);
 			return;
 		}
 	}
