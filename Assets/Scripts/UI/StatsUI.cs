@@ -21,7 +21,8 @@ public class StatsUI : MonoBehaviour
 		textMeshPro.text =
 			$"{groupAI.tag}:\n" +
 			$"Count = {groupAI.members.Count}\n" +
-			$"Speed = {groupAI.members[0].maxSpeed:F1}\n";
+			$"Speed = {groupAI.members[0].maxSpeed:F1}\n" +
+			$"Strategy = {groupAI.focusBehaviour}\n";
 	}
 
 }

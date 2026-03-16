@@ -1516,6 +1516,7 @@ MonoBehaviour:
   friendlyUnitsBounds: {x: 2, y: 7}
   targetUnitsBounds: {x: 3, y: 8}
   enemyUnitsBounds: {x: 1, y: 6}
+  focusBehaviour: 1
   isReady: 0
 --- !u!114 &197690484
 MonoBehaviour:
@@ -2589,6 +2590,7 @@ MonoBehaviour:
   friendlyUnitsBounds: {x: 2, y: 7}
   targetUnitsBounds: {x: 3, y: 8}
   enemyUnitsBounds: {x: 1, y: 6}
+  focusBehaviour: 1
   isReady: 0
 --- !u!114 &416420067
 MonoBehaviour:
@@ -5002,6 +5004,7 @@ MonoBehaviour:
   friendlyUnitsBounds: {x: 2, y: 7}
   targetUnitsBounds: {x: 3, y: 8}
   enemyUnitsBounds: {x: 1, y: 6}
+  focusBehaviour: 1
   isReady: 0
 --- !u!114 &831512584
 MonoBehaviour:
@@ -5814,6 +5817,7 @@ MonoBehaviour:
   friendlyUnitsBounds: {x: 2, y: 7}
   targetUnitsBounds: {x: 3, y: 8}
   enemyUnitsBounds: {x: 1, y: 6}
+  focusBehaviour: 1
   isReady: 0
 --- !u!114 &970105801
 MonoBehaviour:
@@ -8789,7 +8793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -70}
+  m_AnchoredPosition: {x: 50, y: -100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1707010291
@@ -9952,6 +9956,7 @@ MonoBehaviour:
   friendlyUnitsBounds: {x: 2, y: 7}
   targetUnitsBounds: {x: 3, y: 8}
   enemyUnitsBounds: {x: 1, y: 6}
+  focusBehaviour: 1
   isReady: 0
 --- !u!114 &1994961937
 MonoBehaviour:

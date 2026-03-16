@@ -6,6 +6,7 @@ public class IndividualAI : MonoBehaviour
 {
 	private StateMachine<IndividualAI> stateMachine;
 	private JumpHandler jumpHandler;
+	private GroupAI groupAI;
 
 	public Flee flee { get; private set; }
 	public Seek seek { get; private set; }
@@ -69,6 +70,7 @@ public class IndividualAI : MonoBehaviour
 	{
 		stateMachine = new StateMachine<IndividualAI>();
 		jumpHandler = GetComponent<JumpHandler>();
+		groupAI = GetComponentInParent<GroupAI>();
 
 		flee = new Flee(this, stateMachine);
 		seek = new Seek(this, stateMachine);
@@ -162,15 +164,7 @@ public class IndividualAI : MonoBehaviour
 			return;
 		}
 
-		IndividualAI[] possibleTargets = GameManager.Instance.GetPossibleTargets(myTag);
-
-		Transform nearestTarget = possibleTargets
-		.Where(t => t != this)
-		.OrderBy(t => (t.transform.position - transform.position).sqrMagnitude)
-		.Select(t => t.transform)
-		.FirstOrDefault();
-
-		seek.target = nearestTarget;
+		seek.target = groupAI.GetTargetForMember(this);
 		stateMachine.ChangeState(seek);
 	}
 

@@ -2,6 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum FocusBehaviour
+{
+	FocusFew,
+	FocusMany,
+	Independent
+}
+
 public class GroupAI : MonoBehaviour
 {
 	[SerializeField] private float calmSpeed = 2f;
@@ -10,6 +17,7 @@ public class GroupAI : MonoBehaviour
 	[SerializeField] private Vector2Int friendlyUnitsBounds;
 	[SerializeField] private Vector2Int targetUnitsBounds;
 	[SerializeField] private Vector2Int enemyUnitsBounds;
+	public FocusBehaviour focusBehaviour;
 
 	private float currentSpeed;
 	public List<IndividualAI> members { get; private set; }
@@ -29,6 +37,8 @@ public class GroupAI : MonoBehaviour
 		{
 			member.OnDeath += OnMemberDeath;
 		}
+
+		focusBehaviour = (FocusBehaviour)Random.Range(0, 3);
 	}
 
 	public void StartMoving()
@@ -116,6 +126,54 @@ public class GroupAI : MonoBehaviour
 		float denominator = rule1 + rule2 + rule3 + rule4 + rule5 + rule6 + rule7;
 
 		return numerator / denominator;
+	}
+
+	public Transform GetTargetForMember(IndividualAI member)
+	{
+		IndividualAI[] targets = GameManager.Instance.GetPossibleTargets(tag);
+
+		if (targets.Length == 0)
+			return null;
+
+		switch (focusBehaviour)
+		{
+			case FocusBehaviour.FocusFew:
+				return GetFocusFewTarget(member, targets);
+
+			case FocusBehaviour.FocusMany:
+				return GetFocusManyTarget(member, targets);
+
+			case FocusBehaviour.Independent:
+			default:
+				return GetNearestTarget(member, targets);
+		}
+	}
+
+	private Transform GetFocusFewTarget(IndividualAI member, IndividualAI[] targets)
+	{
+		Vector3 groupCenter = members
+			.Select(m => m.transform.position)
+			.Aggregate(Vector3.zero, (sum, pos) => sum + pos) / members.Count;
+
+		return targets
+			.OrderBy(t => (t.transform.position - groupCenter).sqrMagnitude)
+			.First()
+			.transform;
+	}
+
+	private Transform GetFocusManyTarget(IndividualAI member, IndividualAI[] targets)
+	{
+		int index = members.IndexOf(member);
+
+		return targets[index % targets.Length].transform;
+	}
+
+	private Transform GetNearestTarget(IndividualAI member, IndividualAI[] targets)
+	{
+		return targets
+			.OrderBy(t => (t.transform.position - member.transform.position).sqrMagnitude)
+			.First()
+			.transform;
 	}
 
 }
