@@ -78,16 +78,11 @@ public class IndividualAI : MonoBehaviour
 		lastBoostTime = Time.time - boostCooldown - boostduration;
 	}
 
-	void Start()
-	{
-		ChooseNewState();
-	}
-
 	void Update()
 	{
 		if (stateMachine.CurrentState == null)
 		{
-			ChooseNewState();
+			return;
 		}
 
 		stateMachine.Update();

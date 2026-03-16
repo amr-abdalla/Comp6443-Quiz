@@ -6,6 +6,8 @@ public class CharactersSpawner : MonoBehaviour
 	[SerializeField] private int spawnCount;
 	[SerializeField] private GameObject prefabToSpawn;
 
+	public Transform GetPrefabToSpawn() => prefabToSpawn.transform;
+
 	public void StartSpawning(Transform parent)
 	{
 		for (int i = 0; i < spawnCount; i++)

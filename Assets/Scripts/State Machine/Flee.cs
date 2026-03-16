@@ -31,7 +31,7 @@ public class Flee : State<IndividualAI>
 
 		if (nearestJumpPad != null)
 		{
-			// Prioritize jump pad
+			// Move Towards Jump Pad
 			moveDir = (nearestJumpPad.position - owner.transform.position).normalized;
 		}
 		else

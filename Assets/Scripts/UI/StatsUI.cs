@@ -19,7 +19,7 @@ public class StatsUI : MonoBehaviour
 		}
 
 		textMeshPro.text =
-			$"{groupAI.factionTag}:\n" +
+			$"{groupAI.tag}:\n" +
 			$"Count = {groupAI.members.Count}\n" +
 			$"Speed = {groupAI.members[0].maxSpeed:F1}\n";
 	}

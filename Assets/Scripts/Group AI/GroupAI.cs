@@ -13,14 +13,17 @@ public class GroupAI : MonoBehaviour
 
 	private float currentSpeed;
 	public List<IndividualAI> members { get; private set; }
-	public string factionTag { get; private set; }
+	public bool isReady = false;
 
-	public void SpawnAndInit()
+	public void SpawnAllMembers()
 	{
 		CharactersSpawner spawner = GetComponent<CharactersSpawner>();
 		spawner.StartSpawning(transform);
+	}
+
+	public void init()
+	{
 		members = GetComponentsInChildren<IndividualAI>().ToList();
-		factionTag = members[0].gameObject.tag;
 
 		foreach (IndividualAI member in members)
 		{
@@ -28,9 +31,27 @@ public class GroupAI : MonoBehaviour
 		}
 	}
 
+	public void StartMoving()
+	{
+		foreach (IndividualAI member in members)
+		{
+			member.ChooseNewState();
+		}
+
+		isReady = true;
+	}
+
 	private void Update()
 	{
-		UpdateFactionSpeed();
+		if (!GameManager.Instance.isReady())
+		{
+			return;
+		}
+
+		if (members != null)
+		{
+			UpdateFactionSpeed();
+		}
 	}
 
 	private void OnMemberDeath(IndividualAI member)
@@ -57,8 +78,8 @@ public class GroupAI : MonoBehaviour
 	private float GetUpdatedSpeed()
 	{
 		int friendlyUnitsCount = members.Count;
-		int enemyUnitsCount = GameManager.Instance.GetPossibleEnemies(factionTag).Length;
-		int targetUnitsCount = GameManager.Instance.GetPossibleTargets(factionTag).Length;
+		int enemyUnitsCount = GameManager.Instance.GetPossibleEnemies(tag).Length;
+		int targetUnitsCount = GameManager.Instance.GetPossibleTargets(tag).Length;
 
 		float lowFriendly = FuzzyHelper.GetLowDegree(friendlyUnitsCount, friendlyUnitsBounds);
 		float highFriendly = FuzzyHelper.GetHighDegree(friendlyUnitsCount, friendlyUnitsBounds);
@@ -96,4 +117,5 @@ public class GroupAI : MonoBehaviour
 
 		return numerator / denominator;
 	}
+
 }
