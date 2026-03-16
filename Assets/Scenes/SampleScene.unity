@@ -1180,7 +1180,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -53.429993, y: -482.02}
-  m_SizeDelta: {x: 266.86, y: 137.34}
+  m_SizeDelta: {x: 208.61, y: 137.34}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &177139581
 MonoBehaviour:
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
-  m_HorizontalFit: 2
+  m_HorizontalFit: 0
   m_VerticalFit: 2
 --- !u!114 &177139582
 MonoBehaviour:
@@ -8043,7 +8043,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -53.429993, y: -167.34}
-  m_SizeDelta: {x: 266.86, y: 137.34}
+  m_SizeDelta: {x: 208.61, y: 137.34}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1549979944
 MonoBehaviour:
@@ -8057,7 +8057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
-  m_HorizontalFit: 2
+  m_HorizontalFit: 0
   m_VerticalFit: 2
 --- !u!114 &1549979945
 MonoBehaviour:
@@ -8353,7 +8353,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -53.429993, y: -324.68}
-  m_SizeDelta: {x: 266.86, y: 137.34}
+  m_SizeDelta: {x: 208.61, y: 137.34}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1613180288
 MonoBehaviour:
@@ -8367,7 +8367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
-  m_HorizontalFit: 2
+  m_HorizontalFit: 0
   m_VerticalFit: 2
 --- !u!114 &1613180289
 MonoBehaviour:
@@ -9340,7 +9340,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -53.429993, y: -639.36}
-  m_SizeDelta: {x: 266.86, y: 137.34}
+  m_SizeDelta: {x: 208.61, y: 137.34}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1893279646
 MonoBehaviour:
@@ -9354,7 +9354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
-  m_HorizontalFit: 2
+  m_HorizontalFit: 0
   m_VerticalFit: 2
 --- !u!114 &1893279647
 MonoBehaviour:
@@ -10147,7 +10147,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -53.429993, y: -10}
-  m_SizeDelta: {x: 266.86, y: 137.34}
+  m_SizeDelta: {x: 208.61, y: 137.34}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2029680990
 MonoBehaviour:
@@ -10272,7 +10272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
-  m_HorizontalFit: 2
+  m_HorizontalFit: 0
   m_VerticalFit: 2
 --- !u!114 &2029680993
 MonoBehaviour:
